@@ -1,0 +1,66 @@
+
+.header {
+    .bx-wrapper {
+        box-shadow: none;
+        border: none;
+    } 
+    &-wrap {
+        z-index: 2;
+        position: fixed;
+        left: 50%;
+        transform: translateX( -50% );
+        width: 1280px;
+        height: 160px;
+        padding: 60px 0 60px;
+        @include clearfix();
+    }
+
+    .logo {
+        float: left;
+        width: 190px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .gnb {
+        float: left;
+        width: 900px;
+
+        ul {
+            line-height: 40px;
+            text-align: center;
+
+            li {
+                display: inline-block;
+                margin: 0 30px;
+                line-height: 40px;
+            }
+        }
+
+    }
+
+    .user-support {
+        float: right;
+        width: 190px;
+
+
+
+        &-icon {
+            text-align: right;
+
+            li {
+                display: inline-block;
+                margin-left: 17px;
+                line-height: 40px;
+                width: 40px;
+                text-align: center;
+
+                a img {
+                    height: 20px;
+                    width: auto;
+                }
+            }
+        }
+    }
+    
+}
