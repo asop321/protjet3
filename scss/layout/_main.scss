@@ -5,11 +5,7 @@
     .bx-wrapper {
         box-shadow: none;
         border: none;
-        height: 320px;
-
-        .bx-clone {
-            margin: none !important;
-        }
+        margin: 0;
 
         .bx-controls {
             display: none;
@@ -25,6 +21,10 @@
 
         p.color {
             color: #5eaeba;
+            animation-name: moveInDown;
+            animation-duration: 1s;
+            animation-delay: 1s;
+            animation-fill-mode: backwards;
         }
 
         p {
@@ -32,12 +32,20 @@
             font-family: 'Noto Sans KR', sans-serif;
             font-weight: 200;
             letter-spacing: -2px;
+            animation-name: moveInDown;
+            animation-duration: 2s;
+            animation-delay: 2s;
+            animation-fill-mode: backwards;
         }
 
         p.small {
             font-size: 20px;
             color: #9ba1ad;
             margin: 40px 0 60px;
+            animation-name: moveInDown;
+            animation-duration: 3s;
+            animation-delay: 3s;
+            animation-fill-mode: backwards;
         }
 
         a {
@@ -48,6 +56,10 @@
             background: $color-dark;
             color: #fff;
             text-decoration: none;
+            animation-name: moveInDown;
+            animation-duration: 4s;
+            animation-delay: 4s;
+            animation-fill-mode: backwards;
         }
     }
 
@@ -62,8 +74,9 @@
         .pic-li-lt {
             float: left;
             width: 50%;
+            @include clearfix();
 
-            ul {ftrfmlfgkjgdflgflkgdflk
+            ul {
 
                 padding: 100px;
                 margin-top: 10px;
@@ -108,16 +121,11 @@
 
         .right {
             float: left;
+            @include clearfix();
 
             .lat {
                 padding: 100px;
-                .lt-info span {
-                    font-size: 16px;
-                    position: relative;
-                    top: -32px;
-                    left:-100px;
-                    color: #9ba1ad;
-                }
+
                 .basic-li {
                     height: 50px;
                     padding: 10px;
@@ -126,17 +134,39 @@
                     line-height: 30px;
                     font-size: 20px;
                     font-weight: 400;
+                    display: flex;
+                    width: 750px;
+                    margin-bottom: 25px;
+
+                    @include mq('small-screen-1') {
+                        width: 500px;
+                    }
+
 
                     a {
                         color: $color-dark;
                         text-decoration: none;
+                        width: 600px;
+
+                        @include mq('small-screen-1') {
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            height: 25px;
+                        }
+
 
                         &:hover {
                             color: $color-primary;
-                            padding-bottom: 5px;
-
-                            border-bottom: 1px solid $color-primary;
+                            text-decoration: underline;
                         }
+                    }
+
+                    .lt-date {
+                        width: 150px;
+                        text-align: right;
+                        font-size: 16px;
+                        color: #9ba1ad;
                     }
                 }
             }

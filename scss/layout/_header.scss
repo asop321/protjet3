@@ -1,14 +1,17 @@
-
 .header {
+    position: relative;
     .bx-wrapper {
         box-shadow: none;
         border: none;
-    } 
+        
+
+    }
+
     &-wrap {
         z-index: 2;
         position: fixed;
         left: 50%;
-        transform: translateX( -50% );
+        transform: translateX(-50%);
         width: 1280px;
         height: 160px;
         padding: 60px 0 60px;
@@ -34,7 +37,29 @@
                 display: inline-block;
                 margin: 0 30px;
                 line-height: 40px;
+                a{
+                    position: relative;
+                    text-decoration: none;
+                    color:$color-dark ;
+                }
+                a:hover::after{
+                    content: "";
+                    display: block;
+                    width: 0%;
+                    height: 6px;
+                    background: rgba(94,174,186,0.5);
+                    position: absolute;
+                    bottom: 0;
+                    left: -2px;
+                    transition: 0.5s;
+                    z-index: -1;
+                    animation: line 1s ease-in-out forwards;
+                }
             }
+            
+            
+           
+
         }
 
     }
@@ -62,5 +87,41 @@
             }
         }
     }
+
+    .text-left {
+        display: block;
+        z-index: 1000000;
+        position: absolute;
+        top: 520px;
+        left: 150px;
+        font-size: 26px;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-delay: 1s;
+        animation-fill-mode: backwards;
+        @include mq('small-screen-1') {
+            top: 385px !important;
+            left: 120px !important;
+        }
     
+    }
+
+    .text-right {
+        display: block;
+        z-index: 1000000;
+        position: absolute;
+        top: 520px;
+        right: 150px;
+        font-size: 26px;
+        animation-name: moveInRight;
+        animation-duration: 1s;
+        animation-delay: 1s;
+        animation-fill-mode: backwards;
+        @include mq('small-screen-1') {
+            top: 385px !important;
+            right: 120px !important;
+        }
+    }
+
+
 }
